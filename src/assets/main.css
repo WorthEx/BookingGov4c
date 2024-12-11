@@ -1,0 +1,52 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+* {
+    @apply leading-none;
+    @apply outline-none;
+}
+
+::selection {
+    @apply text-white;
+    @apply bg-gov;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+    display: none;
+}
+
+html {
+    @apply min-h-screen
+}
+
+/* Scrollbar width */
+::-webkit-scrollbar {
+    width: .5rem;
+}
+
+/* Scrollbar Track */
+::-webkit-scrollbar-track {
+    @apply bg-gov/30 rounded-[1rem];
+}
+
+/* Scrollbar Handle */
+::-webkit-scrollbar-thumb {
+    @apply bg-gov rounded-full;
+}
+
+/* Scrollbar Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    @apply bg-gov/80;
+}
+
+.v-enter-active,
+.v-leave-active {
+    transition: opacity .2s ease-out;
+}
+
+.v-enter-from,
+.v-leave-to {
+    opacity: 0;
+}
