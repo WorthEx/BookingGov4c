@@ -1,5 +1,6 @@
 <script setup>
 import {RouterView} from 'vue-router'
+import Navigation from "@/components/Navigation.vue";
 </script>
 
 <template>
@@ -8,8 +9,11 @@ import {RouterView} from 'vue-router'
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
         rel="stylesheet">
   <div id="app" class="relative h-full">
-    <!--    <Navigation/>-->
+    <Navigation/>
     <RouterView/>
   </div>
 </template>
 
+<style>
+@import "bootstrap-icons/font/bootstrap-icons.min.css";
+</style>
