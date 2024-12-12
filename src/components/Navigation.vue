@@ -13,7 +13,7 @@ const langSelectOpened = ref(false);
 <template>
   <div class="relative">
     <div
-        class="w-full select-none fixed top-0 z-[1000] shadow-[0_0_1.5rem_.5rem_rgba(0,0,0,.1)]">
+        class="w-full select-none fixed top-0 z-[1000] shadow-[0_0_1.5rem_.5rem_rgba(0,0,0,.1)] bg-white">
       <Container>
         <div
             class="sm:h-32 h-20 flex justify-between items-center text-[14px] md:text-[16px]">

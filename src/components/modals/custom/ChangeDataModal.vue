@@ -42,7 +42,7 @@ const changeData = () => {
     iin: iin.value,
     fio: fio.value,
     department: department.value,
-    date: dateToString(date.value),
+    date: date.value,
     time: time.value,
   })
 }
@@ -122,7 +122,7 @@ onMounted(_ => {
       <div class="flex flex-col gap-[1rem]">
         <label class="text-white" for="Дата">Дата</label>
         <input id="Дата" v-model="date" autocomplete="off"
-               class="px-4 py-2.5 ring-black ring-[1px] rounded-[.5rem] bg-white
+               class="w-full px-4 py-2.5 ring-black ring-[1px] rounded-[.5rem] bg-white
              placeholder:text-[#C3C3C3] outline-none
              transition-all hover:ring-[#AAAAAA]"
                name="Дата"
@@ -131,7 +131,7 @@ onMounted(_ => {
       <div class="flex flex-col gap-[1rem]">
         <label class="text-white" for="Время">Время</label>
         <input id="Время" v-model="time"
-               class="px-4 py-2.5 ring-black ring-[1px] rounded-[.5rem] bg-white
+               class="w-full px-4 py-2.5 ring-black ring-[1px] rounded-[.5rem] bg-white
              placeholder:text-[#C3C3C3] outline-none
              transition-all hover:ring-[#AAAAAA]"
                name="Время"

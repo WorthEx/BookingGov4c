@@ -1,18 +1,12 @@
 <script setup>
 import {useModal} from "@/components/modals/useModal.js";
-import {markRaw, onMounted, ref} from "vue";
+import {markRaw} from "vue";
 import ChangeDataModal from "@/components/modals/custom/ChangeDataModal.vue";
 import Container from "@/components/Container.vue";
 import {useBookingStore} from "@/stores/booking.js";
 
 const modal = useModal()
 const bookingStore = useBookingStore()
-
-const iin = ref("")
-const fio = ref("")
-const department = ref("")
-const date = ref("")
-const time = ref("")
 
 const onCloseChangeDataModal = _ => {
   document.body.style.overflow = "auto"
@@ -26,12 +20,6 @@ const onChangeData = (newData) => {
   bookingStore.date = newData.date
   bookingStore.time = newData.time
 
-  iin.value = newData.iin;
-  fio.value = newData.fio;
-  department.value = newData.department;
-  date.value = newData.date;
-  time.value = newData.time;
-
   onCloseChangeDataModal()
 }
 
@@ -41,13 +29,6 @@ const openChangeDataModal = _ => {
   modal.showModal()
 }
 
-onMounted(_ => {
-  iin.value = bookingStore.iin;
-  fio.value = bookingStore.fio;
-  department.value = bookingStore.department;
-  date.value = bookingStore.date;
-  time.value = bookingStore.time;
-})
 </script>
 
 <template>
@@ -61,31 +42,30 @@ onMounted(_ => {
   </Teleport>
   <div class="min-h-screen sm:py-32 py-20 ">
     <Container>
-      <div class="flex flex-col items-center gap-6 select-none sm:py-12 py-8">
+      <div class="flex flex-col items-center sm:gap-6 gap-4 select-none sm:py-12 py-8">
         <div class="ring-black ring-1 rounded-md p-6 w-full sm:w-fit sm:max-w-[40rem] overflow-hidden
          flex flex-col gap-8">
           <span class="text-center block sm:text-[29px] text-2xl font-medium">Предварительная информация</span>
           <div class="flex flex-col sm:gap-8 gap-6 font-medium">
-            <span>ИИН:&nbsp;&nbsp;<span class="font-bold">{{ iin }}</span></span>
-            <span>ФИО:&nbsp;&nbsp;<span class="font-bold">{{ fio }}</span></span>
-            <span>Отделение:&nbsp;&nbsp;<span class="font-bold">{{ department }}</span></span>
-            <span>Дата:&nbsp;&nbsp;<span class="font-bold">{{ date }}</span></span>
-            <span>Время:&nbsp;&nbsp;<span class="font-bold">{{ time }}</span></span>
+            <span>ИИН:&nbsp;&nbsp;<span class="font-bold">{{ bookingStore.iin }}</span></span>
+            <span>ФИО:&nbsp;&nbsp;<span class="font-bold">{{ bookingStore.fio }}</span></span>
+            <span>Отделение:&nbsp;&nbsp;<span class="font-bold">{{ bookingStore.department }}</span></span>
+            <span>Дата:&nbsp;&nbsp;<span class="font-bold">{{ bookingStore.date }}</span></span>
+            <span>Время:&nbsp;&nbsp;<span class="font-bold">{{ bookingStore.time }}</span></span>
           </div>
         </div>
         <span
-            class="font-bold text-[#dc3545] text-xl sm:text-center">Удостоверьтесь в правильности данных.
+            class="font-bold text-[#dc3545] sm:text-xl text-lg sm:text-center">Удостоверьтесь в правильности данных.
           После нажатия кнопки «Подтвердить» бронирование не подлежит отмене.</span>
-        <div class="flex gap-12">
+        <div class="flex sm:flex-row flex-col justify-center sm:gap-12 gap-2 w-full">
           <button
               class="bg-[#dc3545] hover:bg-[#bb2d3b] active:bg-[#b02a37] transition-all
-              text-white px-4 py-3 rounded-lg cursor-pointer" @click.prevent="openChangeDataModal">
+              text-white px-4 py-3 rounded-lg cursor-pointer flex justify-center" @click.prevent="openChangeDataModal">
             Отменить
           </button>
           <a
               class="bg-[#198754] hover:bg-[#157347] active:bg-[#146c43] transition-all
-              text-white px-4 py-3 rounded-lg" href="https://booking.gov4c.kz/" target="_blank"
-          >
+              text-white px-4 py-3 rounded-lg flex justify-center" href="https://booking.gov4c.kz/" target="_blank">
             Подтвердить
           </a>
         </div>
