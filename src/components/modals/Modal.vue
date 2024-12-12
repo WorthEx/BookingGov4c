@@ -11,12 +11,12 @@ defineEmits(['closeModal'])
 
 <template>
   <div
-      class="fixed inset-0 z-[1000] size-full bg-black/50 backdrop-blur-[.5rem] sm:py-12 py-4"
+      class="fixed inset-0 z-[1000] size-full bg-black/50 backdrop-blur-[.5rem] sm:py-12 pt-4 pb-14"
       @click.stop.prevent="$emit('closeModal')"
       @drag.prevent.stop>
     <div class="absolute -translate-x-1/2 left-1/2
     bg-black rounded-[1rem] flex flex-col *:w-full select-none w-[calc(100%-1.5rem)] md:w-[40rem]
-    overflow-y-auto sm:max-h-[calc(100vh-6rem)] max-h-[calc(100vh-2rem)] no-scrollbar"
+    overflow-y-auto sm:max-h-[calc(100vh-6rem)] max-h-[calc(100vh-4.5rem)] no-scrollbar"
          @click.stop.prevent>
       <div :class="props.title ? 'justify-between sm:py-[1.5rem] py-[1rem]' : 'justify-end sm:py-[1rem] py-[1rem]'"
            class="flex sm:gap-4 gap-2 items-center sm:px-[2rem] px-[1rem]">

@@ -144,7 +144,7 @@ onMounted(_ => {
         transition-all font-medium
         focus:ring-offset-[.25rem] focus:ring-offset-[#252525] focus:ring-2 focus:ring-white"
                 @click.prevent.stop="changeData">
-          <span class="">Добавить</span>
+          <span class="">Изменить</span>
         </button>
         <button class="w-full cursor-pointer ring-white ring-1 rounded-[.5rem] py-3
         bg-black hover:bg-white/15 active:bg-white/30

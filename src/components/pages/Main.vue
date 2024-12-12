@@ -60,12 +60,14 @@ const openChangeDataModal = _ => {
         <div class="flex sm:flex-row flex-col justify-center sm:gap-12 gap-2 w-full">
           <button
               class="bg-[#dc3545] hover:bg-[#bb2d3b] active:bg-[#b02a37] transition-all
-              text-white px-4 py-3 rounded-lg cursor-pointer flex justify-center" @click.prevent="openChangeDataModal">
+              text-white px-4 py-3 rounded-lg cursor-pointer flex justify-center"
+              @click.prevent="openChangeDataModal">
             Отменить
           </button>
           <a
               class="bg-[#198754] hover:bg-[#157347] active:bg-[#146c43] transition-all
-              text-white px-4 py-3 rounded-lg flex justify-center" href="https://booking.gov4c.kz/" target="_blank">
+              text-white px-4 py-3 rounded-lg flex justify-center" href="https://booking.gov4c.kz/"
+              target="_blank">
             Подтвердить
           </a>
         </div>
