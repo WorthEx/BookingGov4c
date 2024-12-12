@@ -121,21 +121,22 @@ onMounted(_ => {
       </div>
       <div class="flex flex-col gap-[1rem]">
         <label class="text-white" for="Дата">Дата</label>
-        <input id="Дата" v-model="date" autocomplete="off"
+        <input id="Дата" v-model="date"
                class="w-full px-4 py-2.5 ring-black ring-[1px] rounded-[.5rem] bg-white
              placeholder:text-[#C3C3C3] outline-none
              transition-all hover:ring-[#AAAAAA]"
                name="Дата"
-               type="date">
+               type="date"
+               @click.stop>
       </div>
       <div class="flex flex-col gap-[1rem]">
         <label class="text-white" for="Время">Время</label>
-        <input id="Время" v-model="time"
-               class="w-full px-4 py-2.5 ring-black ring-[1px] rounded-[.5rem] bg-white
+        <input id="Время" v-model="time" class="w-full px-4 py-2.5 ring-black ring-[1px] rounded-[.5rem] bg-white
              placeholder:text-[#C3C3C3] outline-none
              transition-all hover:ring-[#AAAAAA]"
                name="Время"
-               type="time">
+               type="time"
+               @click.stop>
       </div>
       <div class="flex sm:flex-row flex-col sm:gap-[2rem] gap-3">
         <button ref="submitButton" class="w-full cursor-pointer bg-white hover:bg-white/90 active:bg-white/80
